@@ -1,0 +1,701 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.html{
+    overflow: hidden;
+}
+*{
+    scroll-behavior: smooth;
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color:#fff;
+    position: relative;
+}
+nav{
+    display:flex;
+    z-index: 1000;
+    position: relative;
+    top:0;
+    left: 1px;
+    right: 0;
+    bottom: 0;
+    background-color: #05cc7a;
+    /*background: linear-gradient(to left,#fff 50%, #000 50%);*/
+
+    height:8vh;
+    padding:0 10px;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    flex:1;
+    text-transform: uppercase;
+    color:#000;
+    font-weight: bolder;
+    font-family: 'Patua One', cursive !important;
+    font-size:30px;
+    letter-spacing: 3px;
+}
+.nav-links{
+    display:flex;
+    width:500px;
+    justify-content: space-around;
+}
+.nav-links li{
+list-style: none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#000;
+    letter-spacing: 3px;
+    font-size:15px;
+    font-weight: 400;
+    transition: 0.3s;
+}
+.nav-links a::after{
+    content: ""; /* This is necessary for the pseudo element to work. */
+    display: block; /* This will put the pseudo element on its own line. */
+    width: 0 ; /* Change this to whatever width you want to have before hover. */
+    padding-top: 10px; /* This creates some space between the element and the border. */
+    border-bottom: 2px solid #000; /* This creates the border. Replace black with whatever color you want. */
+    transition: .3s; /* This establishes the amount of time in seconds the animation should take from start to finish */
+}
+.nav-links a:hover::after{
+    width: 100%; /* This will be the new width of your border when on hover */
+}
+.burger {
+    display:none;
+    cursor: pointer;
+}
+.burger div{
+    background-color:rgb(226,226,226);
+    width:35px;
+    height:3px;
+    margin:5px !important;
+}
+.home {
+    /*background: linear-gradient(to left,#fff 50%, #000 50%);*/
+    background-size: cover;
+    position:relative;
+    height:100vh;
+    background-image: url("image/backimage.png");
+}
+.home-intro{
+    position: absolute;
+    top:38%;
+    left:23%;
+    /*background-color:darkred;*/
+    font-weight: lighter !important;
+
+}
+.home-intro h1{
+font-size:70px;
+}
+.home-intro p{
+    padding-top:20px;
+    text-align: center;
+    font-size:17px;
+    word-spacing: 1px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #222;
+    /*text-transform: uppercase;*/
+}
+.home-intro h1::after{
+    content: ""; /* This is necessary for the pseudo element to work. */
+    display: block; /* This will put the pseudo element on its own line. */
+    width: 100% ; /* Change this to whatever width you want to have before hover. */
+    padding-top: 10px; /* This creates some space between the element and the border. */
+    border-bottom: 2px solid #000; /* This creates the border. Replace black with whatever color you want. */
+    transition: .3s; /* This establishes the amount of time in seconds the animation should take from start to finish */
+}
+.home-social-icons{
+    display: flex;
+    position:absolute;
+    bottom:30px;
+    left:13px;
+    flex-direction: column;
+}
+.home-social-icons > span{
+    padding-top:40px;
+}
+.home-social-icons > span a{
+    text-decoration: none;
+    color:black;
+}
+.home-social-icons > span a:hover{
+    color:#222;
+}
+.home-social-icons > span:first-child{
+    padding-top:0 !important;
+}
+/*.home-intro__this{*/
+/*    flex:1;*/
+/*    text-align: end;*/
+/*    padding-right:10px;*/
+
+/*}*/
+/*.home-intro__this span{*/
+/*    color:rgb(226,226,226);*/
+/*}*/
+/*.home-intro__name{*/
+/*    flex:1;*/
+/*    padding-left:20px;*/
+/*}*/
+/*.home-intro__name span{*/
+/*    color:#000;*/
+/*}*/
+
+.findOutMore{
+    text-align:center;
+    display: flex;
+    justify-content: center;
+    padding-top:60px;
+}
+.findOutMore p{
+    font-size:30px;
+    padding:6px 15px;
+    border:0;
+    text-transform: uppercase;
+    border-radius: 20px;
+    background-color:	#32CD32;
+    cursor: pointer;
+    display: none;
+}
+.findOutMore p:hover{
+background-color:	#228B22;
+    color:black;
+}
+.fa-long-arrow-alt-right{
+    font-size:25px;
+    padding-left:5px;
+}
+
+.container-fluid{
+    width:80%;
+    margin:0 auto;
+}
+
+.paragraph{
+    line-height: 30px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    font-size:17px;
+}
+.about{
+    background-color:#eeeeee;
+    /*background-color: #ffffb5;*/
+    /*height:250px;*/
+    width:100%;
+    text-align: center;
+	padding:70px 0;
+}
+.about-paragraph{
+    padding-bottom:20px;
+}
+.headline{
+    font-size:35px;
+    padding-bottom:30px;
+    text-align: center !important;
+    padding-top:40px;
+}
+.about-headline{
+    display: flex;
+    width: 40%;
+    margin:0 auto;
+    padding-top:40px;
+    justify-content: center;
+    align-items: center;
+}
+.about-headline:before,
+.about-headline:after {
+
+    content: '';
+    border-top: 3px solid;
+    border-color: #03c04a;
+    margin: 0 20px 0 20px;
+    flex: 1 0 20px;
+}
+.portfolio{
+    /*height:690px;*/
+    width:100%;
+    text-align: center;
+	padding:30px 0 70px 0;
+}
+.portfolio-headline::after{
+    content: ""; /* This is necessary for the pseudo element to work. */
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 110px; /* Change this to whatever width you want. */
+    padding-top: 15px; /* This creates some space between the element and the border. */
+    border-bottom: 4px solid #03c04a; /* This creates the border. Replace black with whatever color you want. */
+}
+.portfolio-content{
+    border:1px solid transparent;
+    box-shadow: 0 0 10px green;
+    /*margin:0 auto;*/
+    /*width:80%;*/
+    text-align: center !important;
+    display: grid;
+    align-items: center;
+    padding:40px 20px;
+    justify-content: center;
+    grid-template-rows:repeat(2,1fr);
+    grid-template-columns: repeat(3,1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 50px;
+
+}
+.portfolio-content > div{
+    border-radius: 7px;
+    position:relative;
+
+}
+.portfolio-content > div img{
+    max-width: 100%;
+    width:100%;
+    height:100%;
+    /*height:182px;*/
+    border-radius: 7px;
+    transition: 0.5s;
+}
+.portfolio-content > div:hover img{
+    filter: blur(3px) brightness(80%);
+}
+.portfolio-content > div .overlay{
+    position:absolute;
+    top:7%;
+    z-index: 100;
+    text-align: center;
+    width:100%;
+    color:white;
+    opacity: 0;
+    transition:0.5s;
+}
+.portfolio-content > div:hover .overlay{
+    opacity:1;
+}
+.overlay p{
+    padding-top:20px;
+    font-size:17px;
+
+}
+.button{
+    background-color: red;
+    width:100% !important;
+    text-align: right !important;
+}
+.btn{
+    border:1px solid transparent;
+    border-radius: 5px;
+    text-align:center;
+    background-color:#96b0bc;
+    padding:10px;
+    text-decoration: none;
+    color:black;
+    display: block;
+    font-size:18px;
+}
+.btn-portfolio{
+    width:160px;
+}
+.skills{
+    margin-top:10px;
+    background-image: url("image/skills-background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height:100%;
+    text-align:center;
+	padding:30px 0 70px 0;
+}
+.skills-headline::after{
+    content: ""; /* This is necessary for the pseudo element to work. */
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 70px; /* Change this to whatever width you want. */
+    padding-top: 15px; /* This creates some space between the element and the border. */
+    border-bottom: 3px solid #03c04a; /* This creates the border. Replace black with whatever color you want. */
+}
+.skills-container p{
+    margin:0 5%;
+}
+.skills-content{
+    text-align: center !important;
+    display: grid;
+    align-items: center;
+    padding-top:40px;
+    padding-bottom: 20px;
+    justify-content: center;
+    grid-template-rows:repeat(2,1fr);
+    grid-template-columns: repeat(3,1fr) ;
+    grid-gap:30px;
+}
+.skills-content > div{
+    border-bottom-width:0.01em;
+    border-bottom-style:solid;
+    border-bottom-color:#f5ded2;
+    border-radius: 5px;
+    box-shadow: 2px 3px 2px #03c04a;
+    padding:15px 0;
+    /*height: 180px;*/
+    height: 100%;
+    max-width:100%;
+    background-color:#fff;
+}
+.skills-paragraph{
+    padding-left:10px;
+    text-align: left;
+    font-size:15px !important;
+}
+.logos{
+    width:40px;
+    height:40px;
+}
+.review{
+    background-image: url("image/clients/client-background.webp");
+}
+.client-paragraph{
+    font-size:15px;
+    line-height: 20px !important;
+    padding:30px 0 20px 20px;
+}
+.clients-content > div{
+    /*background-color: darkred;*/
+    border:1px solid transparent;
+    box-shadow: 0 0 10px #999;
+    border-radius: 5px;
+    width:350px;
+    padding:0;
+    height:185px;
+    margin-left:20px;
+}
+.client-image{
+    width:50px;
+    height:50px;
+    border-radius:30px;
+    /*border:1px solid black;*/
+}
+.about-client{
+    display:flex;
+    align-content: center;
+}
+.about-client div:first-child{
+    padding-right:10px;
+    padding-left:15px;
+}
+.carousel-slide{
+    display: flex;
+}
+.contact{
+    background-image: url("image/clients/client-background.webp");
+    background-size:cover;
+}
+.contact-headline::after{
+    content: ""; /* This is necessary for the pseudo element to work. */
+    display: block; /* This will put the pseudo element on its own line. */
+    margin: 0 auto; /* This will center the border. */
+    width: 90px; /* Change this to whatever width you want. */
+    padding-top: 10px; /* This creates some space between the element and the border. */
+    border-bottom: 3px solid #03c04a; /* This creates the border. Replace black with whatever color you want. */
+}
+.contact-content{
+    width:40%;
+    margin: 0 auto;
+}
+.contact-content form div{
+    padding:10px 0;
+    font-size:17px;
+}
+.contact-content form div > label{
+    font-size:20px;
+}
+.contact-content form div:last-child{
+    text-align:center;
+}
+.form-contact{
+    width:100%;
+    margin-top:5px;
+    font-size: 17px;
+    padding:0.08em 2px;
+    outline-width: 2px;
+}
+.form-contact:focus{
+    outline-color:#03c04a;
+    /*background-color: #03c04a;*/
+}
+.form-contact:visited{
+    background-color: #03c04a;
+}
+.submit{
+    font-size:17px;
+    padding:3px 7px;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color:#03c04a;
+    border-color:transparent;
+    border-radius:5px;
+}
+footer{
+    background-color:#222222;
+}
+.footer-container{
+    display:flex;
+    flex-wrap: wrap;
+    color:white;
+    width:70%;
+    margin: 0 auto;
+    justify-content: space-around;
+    flex-direction: row;
+}
+.footer-container > div{
+    flex:25%;
+    border-left:0.01em dotted #666;
+    padding-top:25px;
+    border-collapse: collapse;
+    text-align:center;
+}
+.footer-container > div:hover{
+    background-color: #03c04a;
+}
+.footer-container div:last-child{
+    border-right:0.01em solid #666;
+}
+.footer-container > div >p{
+    padding-top:10px;
+    font-size:14px !important;
+    padding-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.social-media span{
+    font-size:20px;
+    padding-left:10px;
+}
+.social-media span:hover{
+    cursor: pointer;
+    color:#44CFD5;
+}
+.location span{
+    font-size:30px;
+}
+.mail span{
+    font-size:30px;
+}
+.phone span{
+    font-size:30px;
+}
+/*.social-media span:hover{*/
+/*    cursor: pointer;*/
+/*    color:#03c04a;*/
+/*}*/
+@media screen and (max-width:1176px){
+
+    .contact-content{
+        width:50%;
+        margin: 0 auto;
+    }
+}
+
+
+
+@media screen and (max-width:1024px){
+    .footer-container{
+        width:90%;
+    }
+    .contact-content{
+        width:65%;
+        margin: 0 auto;
+    }
+    .paragraph{
+        line-height: 22px;
+        font-size:16px;
+    }
+    .nav-links{
+        display:flex;
+        width:63%;
+        justify-content: space-around;
+    }
+
+
+.about-headline{
+    width:50%;
+}
+
+
+}
+@media screen and (max-width:726px){
+    .footer-container{
+        width:100%;
+        display:flex;
+        flex-wrap: wrap;
+    }
+    .footer-container > div{
+        flex:50% !important;
+        border-bottom: 0.03em dotted #666;
+    }
+    .contact-content{
+        width:70%;
+        margin: 0 auto;
+    }
+    .portfolio-content{
+        grid-template-rows: repeat(3,1fr);
+        grid-template-columns: repeat(2,1fr);
+    }
+    .container-fluid{
+        width:90%;
+    }
+    .skills-content{
+        grid-template-rows: repeat(3,1fr);
+        grid-template-columns: repeat(2,1fr);
+    }
+    body{
+        overflow-x: hidden;
+    }
+.burger{
+    display:block;
+    color:#000;
+}
+    .nav-links{
+        position: absolute;
+        height:92vh;
+        bottom:0;
+        background-color:#05cc7a ;
+        justify-content: space-evenly;
+        top:8vh;
+        display: flex;
+        color:#000;
+        width:50%;
+        align-items: center;
+        right:0;
+        flex-direction:column;
+        transform: translate(100%);
+        transition: transform 0.6s ;
+        z-index: 100;
+    }
+    .nav-links a{
+        color:#000;
+    }
+
+    .nav-active{
+        transform: translate(0,0);
+    }
+    @keyframes navLinkFade {
+        from{
+        opacity:0;
+            transform:translateX(200px);
+        }
+        to{
+            opacity:1;
+            transform:translateX(0px);
+        }
+    }
+    .toggle .line1{
+        transform: rotate(45deg) translate(5px,6px);
+        transition: transform 0.5s ease;
+        color:#000;
+    }
+    .toggle .line2{
+        opacity: 0;
+        color:#000;
+    }
+    .toggle .line3{
+        transform: rotate(-45deg) translate(5px,-6px);
+        transition: transform 0.5s ease;
+        color:#000;
+    }
+    .about-headline{
+        width:70%;
+    }
+}
+@media screen and (max-width:566px){
+    .home-social-icons{
+        display: none;
+    }
+    .home-intro{
+        top:25%;
+        left:10%;
+    }
+    .home-intro h1{
+        font-size:45px;
+        text-align: center;
+    }
+    .portfolio-content{
+        grid-template-rows: repeat(6,1fr);
+        grid-template-columns: repeat(1,1fr);
+    }
+    .footer-container{
+        width:100%;
+    }
+    .container-fluid{
+        width:95%;
+    }
+    .skills-content{
+        grid-template-rows: repeat(6,1fr);
+        grid-template-columns: repeat(1,1fr);
+    }
+    body{
+        overflow-x: hidden;
+    }
+    nav{
+        background-color:#05cc7a ;
+    }
+    .burger{
+        display:block;
+    }
+    .nav-links{
+        position: absolute;
+        height:92vh;
+        bottom:0;
+        background-color:#05cc7a ;
+        justify-content: space-evenly ;
+        top:8vh;
+        display: flex;
+        color:#000;
+        width:50%;
+        align-items: center;
+        right:0;
+        flex-direction:column;
+        transform: translate(100%);
+        transition: transform 0.6s ;
+        z-index: 100;
+    }
+    .nav-links a{
+        color:#000;
+    }
+    /*.nav-links a:hover{*/
+    /*    background-color:rgb(226,226,226);*/
+    /*    color:#000009;*/
+    /*    padding:7px;*/
+    /*    border-radius: 13px;*/
+    /*}*/
+    .nav-active{
+        transform: translate(0,0);
+    }
+    @keyframes navLinkFade {
+        from{
+            opacity:0;
+            transform:translateX(200px);
+        }
+        to{
+            opacity:1;
+            transform:translateX(0px);
+        }
+    }
+    .toggle .line1{
+        transform: rotate(45deg) translate(5px,6px);
+        transition: transform 0.5s ease;
+    }
+    .toggle .line2{
+        opacity: 0;
+    }
+    .toggle .line3{
+        transform: rotate(-45deg) translate(5px,-6px);
+        transition: transform 0.5s ease;
+    }
+    .about-headline{
+        width:100%;
+    }
+}
